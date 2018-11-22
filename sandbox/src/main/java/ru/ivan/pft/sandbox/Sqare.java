@@ -5,6 +5,9 @@ public class Sqare {
     public Sqare(double len){
        this.l=len;
     }
+    public double area(){
+        return this.l * this.l;
+    }
 }
 
 
