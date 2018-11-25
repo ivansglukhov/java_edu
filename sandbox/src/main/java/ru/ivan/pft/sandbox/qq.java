@@ -2,13 +2,14 @@ package ru.ivan.pft.sandbox;
 //sout!
 public class qq {
 	public static void main(String[] args) {
-		double px1 = 72.5;
-		double py1 = 5.60;
-		double px2 = 2.58;
-		double py2 = 83.35;
-		Point p = new Point(px1, py1,px2,py2);
-		System.out.println("Даны точки: P1(" + p.x1 + "," + p.y1 + ") и Р2(" + p.x2 + "," + p.y2 + ")");
-		System.out.println("Расстояние равно "+p.distance());
+		double px1 = 0;		//_
+		double py1 = 1;		//_|_Координаты первой точки
+		double px2 = 0;		//_
+		double py2 = 2;		//_|_Координаты второй точки
+		Point p1 = new Point(px1,py1);
+		Point p2 = new Point(px2,py2);
+		System.out.println("Даны точки: P1(" + p1.x + "," + p1.y + ") и Р2(" + p2.x + "," + p2.y + ")");
+		System.out.println("Расстояние равно "+p1.distance(p2.x,p2.y));
 
 	}
 //	public static double distance(Point p1, Point p2) {

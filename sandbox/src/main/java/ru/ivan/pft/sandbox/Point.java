@@ -1,20 +1,18 @@
 package ru.ivan.pft.sandbox;
 
 public class Point {
-    public double x1;
-    public double y1;
-    public double x2;
-    public double y2;
-    public Point(double xPos1,double yPos1,double xPos2,double yPos2){
-        this.x1=xPos1;
-        this.y1=yPos1;
-        this.x2=xPos2;
-        this.y2=yPos2;
+    public double x;
+    public double y;
+
+    public Point(double xPos1,double yPos1){
+        this.x =xPos1;
+        this.y =yPos1;
+
     }
-    public double distance(){
+    public double distance(double x,double y){
         System.out.println("Вычисляем расстояние между точками");
-        double a=this.x2-this.x1;
-        double b=this.y2-this.y1;
+        double a=x-this.x;
+        double b=y-this.y;
         a=a*a;
         b=b*b;
         return Math.sqrt(a+b);
