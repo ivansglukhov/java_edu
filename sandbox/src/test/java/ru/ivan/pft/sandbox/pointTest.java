@@ -6,10 +6,10 @@ import org.testng.annotations.Test;
 public class pointTest {
     @Test
     public void pointTest1(){
-        double x1=0;
-        double y1=0;
-        double x2=1;
-        double y2=1;
+        double x1=Math.random()*10;
+        double y1=Math.random()*10;
+        double x2=Math.random()*10;
+        double y2=Math.random()*10;
 
         double s=Math.sqrt(((x2-x1)*(x2-x1))+((y2-y1)*(y2-y1)));
 
@@ -23,12 +23,13 @@ public class pointTest {
 
     @Test
     public void pointTest2(){
+        //Теперь проверяем на основе подстановочных, заведомо верных данных.
         double x1=0;
         double y1=0;
-        double x2=2;
+        double x2=0;
         double y2=2;
 
-        double s=Math.sqrt(((x2-x1)*(x2-x1))+((y2-y1)*(y2-y1)));
+        double s=2;
 
         Point pointNumberOne = new Point(x1,y1);
         Point pointNumberTwo = new Point(x2,y2);
