@@ -18,8 +18,14 @@ public class ContactCreation {
 
   @Test
   public void testContactCreation() throws Exception {
+    ContactData cd1 = new ContactData("Ivan", "S", "Glukhov", "GIS", "+7777777", "ivan.s.glukhov@gmail.com");
+    ContactData cd2 = new ContactData("Peter", "The", "Great", "GTG", "+noSuchThing", "some.random.email@gmail.com");
     initContactCreation();
-    fillContactData(new ContactData("Ivan", "S", "Glukhov", "GIS", "+7777777", "ivan.s.glukhov@gmail.com"));
+    fillContactData(cd1);
+    submitContactData();
+    initContactCreation();
+    //fillContactData(new ContactData("Ivan", "S", "Glukhov", "GIS", "+7777777", "ivan.s.glukhov@gmail.com"));
+    fillContactData(cd2);
     submitContactData();
   }
 
