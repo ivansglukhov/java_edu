@@ -1,14 +1,15 @@
-package ru.ivan.pft.addressbook;
+package ru.ivan.pft.addressbook.tests;
 
 import java.util.concurrent.TimeUnit;
 import org.testng.annotations.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import ru.ivan.pft.addressbook.model.ContactData;
 
 public class ContactCreation {
   private WebDriver wd;
 
-  @BeforeClass(alwaysRun = true)
+  @BeforeMethod(alwaysRun = true)
   public void setUp() throws Exception {
     wd = new FirefoxDriver();
     wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -63,7 +64,7 @@ public class ContactCreation {
     wd.findElement(By.name("pass")).sendKeys(pass);
     wd.findElement(By.xpath("//input[@value='Login']")).click();
   }
-  @AfterClass(alwaysRun = true)
+  @AfterMethod(alwaysRun = true)
   public void tearDown() throws Exception {
     wd.quit();
 

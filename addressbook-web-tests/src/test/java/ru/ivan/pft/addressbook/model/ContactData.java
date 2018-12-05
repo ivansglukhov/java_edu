@@ -1,4 +1,4 @@
-package ru.ivan.pft.addressbook;
+package ru.ivan.pft.addressbook.model;
 
 public class ContactData {
     private final String name;
