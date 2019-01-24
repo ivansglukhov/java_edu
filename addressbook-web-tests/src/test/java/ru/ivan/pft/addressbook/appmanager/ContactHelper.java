@@ -53,4 +53,14 @@ public class ContactHelper extends HelperBase {
     }
 
 
+    public void createContact(ContactData contactData) {
+        ContactData newData = new ContactData("Peter", "The", "Great", "GTG", "+0000", "some.random.email@gmail.com","name");
+       addNewContact();
+       fillContactForm(newData,true );
+       SubmitContactContact();
+    }
+
+    public boolean isThereAnyone() {
+        return isElementPresent(By.name("selected[]"));
+    }
 }

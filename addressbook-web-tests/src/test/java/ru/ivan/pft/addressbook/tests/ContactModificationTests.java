@@ -9,6 +9,9 @@ public class ContactModificationTests extends TestBase {
     public void testContactModification(){
         ContactData newData = new ContactData("ModifiedPeter", "ModifiedThe", "ModifiedGreat", "ModifiedGTG", "+0000", "some.Modifiedrandom.email@gmail.com",null);
         app.getNavigationHelper().gotoContactPage();
+        if (!app.getContactHelper().isThereAnyone()){
+            app.getContactHelper().createContact(new ContactData("Peter", "The", "Great", "GTG", "+0000", "some.random.email@gmail.com","name"));
+        }
         app.getContactHelper().selectFirstContact();//Возможно лишнее, так как, кнопка edit своя у каждого контакта
         app.getContactHelper().editSelectedContact();
         app.getContactHelper().fillContactForm(newData,false);
