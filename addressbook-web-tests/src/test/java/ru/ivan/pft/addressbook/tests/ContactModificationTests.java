@@ -7,11 +7,11 @@ public class ContactModificationTests extends TestBase {
 
     @Test
     public void testContactModification(){
-        ContactData newData = new ContactData("ModifiedPeter", "ModifiedThe", "ModifiedGreat", "ModifiedGTG", "+0000", "some.Modifiedrandom.email@gmail.com");
+        ContactData newData = new ContactData("ModifiedPeter", "ModifiedThe", "ModifiedGreat", "ModifiedGTG", "+0000", "some.Modifiedrandom.email@gmail.com",null);
         app.getNavigationHelper().gotoContactPage();
         app.getContactHelper().selectFirstContact();//Возможно лишнее, так как, кнопка edit своя у каждого контакта
         app.getContactHelper().editSelectedContact();
-        app.getContactHelper().fillContactForm(newData);
+        app.getContactHelper().fillContactForm(newData,false);
         app.getContactHelper().updateEditedContact();
 
     }

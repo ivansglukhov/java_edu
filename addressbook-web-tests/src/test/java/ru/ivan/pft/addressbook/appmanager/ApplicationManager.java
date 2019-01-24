@@ -29,7 +29,7 @@ public class ApplicationManager {
             webDrv = new InternetExplorerDriver();
         }
 
-        webDrv.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        webDrv.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         webDrv.get("http://localhost/addressbook/");
         groupHelper = new GroupHelper(webDrv);
         navigationHelper = new NavigationHelper(webDrv);
