@@ -7,8 +7,8 @@ import sun.plugin2.util.BrowserType;
 
 public class TestBase {
 
-    //protected final ApplicationManager app = new ApplicationManager(BrowserType.MOZILLA);
-    protected final ApplicationManager app = new ApplicationManager(BrowserType.INTERNET_EXPLORER);
+    protected final ApplicationManager app = new ApplicationManager(BrowserType.MOZILLA);
+    //protected final ApplicationManager app = new ApplicationManager(BrowserType.INTERNET_EXPLORER);
 
     @BeforeMethod(alwaysRun = true)
     public void setUp() throws Exception {
