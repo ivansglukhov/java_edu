@@ -1,6 +1,10 @@
 package ru.ivan.pft.addressbook.tests;
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import org.testng.Assert;
 import org.testng.annotations.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -9,13 +13,25 @@ import ru.ivan.pft.addressbook.model.ContactData;
 public class ContactCreation extends TestBase {
 
   @Test
-  public void testContactModification(){
-    ContactData newData = new ContactData("Peter", "The", "Great", "GTG", "+0000", "some.random.email@gmail.com","name");
+  public void testContactCtration(){
+
     app.getNavigationHelper().gotoContactPage();
+    List<ContactData> before = app.getContactHelper().getContactList();
+    ContactData newData = new ContactData(0,"Peter", "The", "Great", "PTG", "0000", "ptg@ptg.ru","new_group");
     app.getContactHelper().addNewContact();
     app.getContactHelper().fillContactForm(newData,true );
     app.getContactHelper().SubmitContactContact();
+    List<ContactData> after = app.getContactHelper().getContactList();
     //app.getContactHelper().updateEditedContact();
+    Assert.assertEquals(after.size(), before.size()+1);
+    before.add(newData);
+
+    Comparator<? super ContactData> byContactId = (c1,c2) -> Integer.compare(c1.getId(),c2.getId());
+    System.out.println(before);
+    System.out.println(after);
+    before.sort(byContactId);
+    after.sort(byContactId);
+    Assert.assertEquals(before,after);
 
   }
 }
