@@ -1,6 +1,7 @@
 package ru.ivan.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
@@ -25,9 +26,12 @@ public class ApplicationManager {
         System.out.println(browser);
         if (browser.equals("firefox")){
             webDrv = new FirefoxDriver();
-        } else if (browser.equals("internet explorer")){
+        } else if (browser.equals("internet explorer")){ //как же он, зараза, медленно работает!!!
             webDrv = new InternetExplorerDriver();
         }
+        else if (browser.equals("chrome")){
+        webDrv = new ChromeDriver();
+    }
 
         webDrv.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         webDrv.get("http://localhost/addressbook/");
