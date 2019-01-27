@@ -1,6 +1,7 @@
 package ru.ivan.pft.addressbook.model;
 
 public class ContactData {
+
     private final String name;
     private final String midName;
     private final String lastName;
