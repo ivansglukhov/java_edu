@@ -1,5 +1,7 @@
 package ru.ivan.pft.addressbook.tests;
 
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import ru.ivan.pft.addressbook.model.GroupData;
 
@@ -8,6 +10,7 @@ public class GroupModificationTests extends TestBase {
     @Test
     public void testGroupModification(){
         app.getNavigationHelper().gotoGroupPage();
+        int before = app.getGroupHelper().getGroupCount();
         if (!app.getGroupHelper().isThereAGroup()){
             app.getGroupHelper().createGroup(new GroupData("name", null, null));
         }
@@ -16,6 +19,8 @@ public class GroupModificationTests extends TestBase {
         app.getGroupHelper().fillGroupForm(new GroupData("name", "hdr", "ftr"));
         app.getGroupHelper().submitGroupModification();
         app.getGroupHelper().gotoGroupPage();
+        int after = app.getGroupHelper().getGroupCount();
+        Assert.assertEquals(before , after);
 
     }
 }

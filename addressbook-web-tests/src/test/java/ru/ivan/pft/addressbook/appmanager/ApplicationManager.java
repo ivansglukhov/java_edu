@@ -25,7 +25,7 @@ public class ApplicationManager {
         System.out.println(browser);
         if (browser.equals("firefox")){
             webDrv = new FirefoxDriver();
-        } else if (browser.equals("firefox")){
+        } else if (browser.equals("internet explorer")){
             webDrv = new InternetExplorerDriver();
         }
 
